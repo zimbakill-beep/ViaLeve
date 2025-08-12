@@ -65,7 +65,7 @@ def calc_idade(d):
 
 EXCIPIENTES_COMUNS = [
     "Polietilenoglicol (PEG)","Metacresol / Fenol","Fosfatos (fosfato dissódico etc.)",
-    "Látex (agulhas/rolhas)","Carboximetilcelulose","Trometamina (TRIS)",
+    "Látex (camisinha/agulhas/rolhas)","Carboximetilcelulose","Trometamina (TRIS)",
 ]
 
 def evaluate_rules(a:Dict[str,Any]):
@@ -83,7 +83,7 @@ def evaluate_rules(a:Dict[str,Any]):
     if g("amamentando")=="sim": exclusion.append("Amamentação em curso.")
     if g("tratamento_cancer")=="sim": exclusion.append("Tratamento oncológico ativo.")
     if g("pancreatite_previa")=="sim": exclusion.append("História de pancreatite prévia.")
-    if g("historico_mtc_men2")=="sim": exclusion.append("História pessoal/familiar de carcinoma medular de tireoide (MTC) ou MEN2.")
+    if g("historico_mtc_men2")=="sim": exclusion.append("História pessoal/familiar de cancer de tireoide.")
     if g("alergia_glp1")=="sim": exclusion.append("Hipersensibilidade conhecida a análogos de GLP-1.")
     if g("alergias_componentes"):
         if g("alergias_componentes")!=["Não tenho alergia a esses componentes"]:
@@ -143,7 +143,7 @@ if st.session_state.step==0:
             c1,c2,c3=st.columns([1,1,2])
             dia=c1.selectbox("Dia", list(range(1,32)), index=d_d-1)
             mes=c2.selectbox("Mês", list(range(1,13)), index=d_m-1)
-            anos=list(range(1900, today.year+1))
+            anos=list(range(1940, today.year+1))
             idx=anos.index(d_a) if d_a in anos else len(anos)//2
             ano=c3.selectbox("Ano", anos, index=idx)
             identidade=st.selectbox("Como você se identifica? (opcional)", ["Feminino","Masculino","Prefiro não informar"], index=(["Feminino","Masculino","Prefiro não informar"].index(st.session_state.answers.get("identidade","Feminino")) if st.session_state.answers.get("identidade") else 0))
@@ -185,7 +185,7 @@ elif st.session_state.step==2:
             gastro=st.selectbox("Já recebeu diagnóstico de gastroparesia (esvaziamento gástrico lento)?", ["Não","Sim"], index=0 if st.session_state.answers.get("gastroparesia","nao")=="nao" else 1)
         with col2:
             pancrea=st.selectbox("Já teve pancreatite?", ["Não","Sim"], index=0 if st.session_state.answers.get("pancreatite_previa","nao")=="nao" else 1)
-            mtc=st.selectbox("Algum caso seu ou na família de câncer de tireoide ou síndrome genética rara (MTC ou MEN2)?", ["Não","Sim"], index=0 if st.session_state.answers.get("historico_mtc_men2","nao")=="nao" else 1)
+            mtc=st.selectbox("Algum caso seu ou na família de câncer de tireoide?", ["Não","Sim"], index=0 if st.session_state.answers.get("historico_mtc_men2","nao")=="nao" else 1)
             cole=st.selectbox("Teve crise de vesícula ou colecistite nos últimos 12 meses?", ["Não","Sim"], index=0 if st.session_state.answers.get("colecistite_12m","nao")=="nao" else 1)
             outras=st.text_area("Outras condições relevantes?")
         st.session_state.answers.update({
@@ -241,7 +241,7 @@ elif st.session_state.step==4:
             efeitos=st.text_area("Teve algum efeito colateral? (opcional)", value=st.session_state.answers.get("efeitos",""))
         with col2:
             obj=st.selectbox("Qual seu objetivo principal?", ["Perda de peso","Controle de comorbidades","Manutenção do peso"], index=["Perda de peso","Controle de comorbidades","Manutenção do peso"].index(st.session_state.answers.get("objetivo","Perda de peso")) if st.session_state.answers.get("objetivo") else 0)
-            pronto=st.slider("Numa escala de 0 a 10, o quanto você está pronto(a) para transformar seus hábitos e conquistar seus objetivos?", 0, 10, value=st.session_state.answers.get("pronto_mudar", 7))
+            pronto=st.slider("Numa escala de 0 a 10, o quanto você está pronto(a) para transformar seus hábitos e conquistar seus objetivos?", 0, 10, value=st.session_state.answers.get("pronto_mudar", 6))
         st.session_state.answers.update({"usou_antes":"sim" if usou=="Sim" else "nao","quais":quais,"efeitos":efeitos,"objetivo":obj,"pronto_mudar":pronto})
         if st.form_submit_button("Revisar & confirmar ✅", use_container_width=True): next_step()
 
