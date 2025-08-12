@@ -1,7 +1,8 @@
-# ViaLeve — Pré-elegibilidade (v0.3)
-- UI mais amigável (textos acolhedores, badges e cartões)
-- Data de nascimento com idade calculada automaticamente
-- Mensagem final otimista + botão de agendamento (via variável de ambiente `VIALEVE_SCHED_URL`)
+# ViaLeve — Pré-elegibilidade (v0.4)
+- Data de nascimento no padrão BR: **Dia / Mês / Ano**
+- Peso com salto de **1 kg**
+- Tudo em **português**
+- Pressionar **Enter** envia cada etapa (formulários)
 
 ## Publicação (Streamlit Cloud)
 1) Suba esta pasta no GitHub
