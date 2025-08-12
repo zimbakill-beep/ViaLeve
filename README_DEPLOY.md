@@ -1,9 +1,5 @@
-# ViaLeve — Pré-elegibilidade (v0.4)
-- Data de nascimento no padrão BR: **Dia / Mês / Ano**
-- Peso com salto de **1 kg**
-- Tudo em **português**
-- Pressionar **Enter** envia cada etapa (formulários)
-
-## Publicação (Streamlit Cloud)
-1) Suba esta pasta no GitHub
-2) New app no Streamlit Cloud → arquivo `app.py`
+# ViaLeve — Pré-elegibilidade (v0.9)
+Implementa o Questionário ViaLeve v1.0 (Marketing).
+- Texto de abertura, barra de progresso nomeada, revisão final
+- Campos atualizados e regras clínicas internas
+- Botão de agendamento via `VIALEVE_SCHED_URL` e WhatsApp opcional `VIALEVE_WHATSAPP_URL`
