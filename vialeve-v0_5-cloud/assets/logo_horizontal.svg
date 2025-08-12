@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="720" height="180" viewBox="0 0 720 180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0EA5A4" />
+      <stop offset="100%" stop-color="#94E7E3" />
+    </linearGradient>
+  </defs>
+  <!-- Icon -->
+  <g transform="translate(10,20)">
+    <circle cx="70" cy="70" r="62" fill="url(#g1)"/>
+    <!-- leaf/feather check -->
+    <path d="M45 70 C60 45, 80 40, 100 55 C95 60, 85 68, 75 78 C68 84, 60 90, 55 94 C58 84, 58 78, 60 70 Z" fill="#ffffff" opacity="0.95"/>
+    <path d="M55 90 L70 105 L105 70" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+  </g>
+  <!-- Wordmark -->
+  <g transform="translate(160,40)">
+    <text x="0" y="55" font-size="64" font-family="Inter, Arial, Helvetica, sans-serif" font-weight="700" fill="#0F172A">Via</text>
+    <text x="155" y="55" font-size="64" font-family="Inter, Arial, Helvetica, sans-serif" font-weight="600" fill="#0EA5A4">Leve</text>
+    <text x="0" y="105" font-size="20" font-family="Inter, Arial, Helvetica, sans-serif" fill="#475569">sua jornada mais leve começa aqui</text>
+  </g>
+</svg>
